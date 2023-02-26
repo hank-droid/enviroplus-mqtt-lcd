@@ -37,6 +37,8 @@ An alternative to using mqtt-linked indoor and outdoor Enviro Monitors to get ou
 
 [Luftdaten]( https://github.com/pimoroni/enviroplus-python/blob/master/examples/luftdaten.py) interworking has been modified to support the addition of minimum, maximum and mean noise level readings. Noise level readings can be sent to Luftdaten by setting "enable_luftdaten_noise" to true in the config.json file. Note that Luftdaten can't currently be configured with three sensors per node, so noise level readings can therefore only be sent to Luftdaten if either PM or climate readings are disabled. That can be done by setting "disable_luftdaten_sensor_upload" in the config.json file to either "Climate" or "PM".
 
+## Update by hank-droid to Sensor.community API
+
 The same [Enviro+ setup]( https://github.com/pimoroni/enviroplus-python/blob/master/README.md) is used to set up the Enviro Monitor and the [config.json](https://github.com/roscoe81/enviro-monitor/blob/master/Config/config.json) file parameters are used to customise its functionality. A description of the config.json file's parameters is [here](https://github.com/roscoe81/enviro-monitor/blob/master/Config/Config_README.md).
 
 Setting up of the noise level measurements requires the following additional steps:
@@ -57,7 +59,7 @@ sudo pip3 install sounddevice==0.3.15
 
 -------------------------------------------------
 
-For Versions 6.7 and later, also do:
+Then also do:
 
 sudo apt-get install python3-scipy
 
@@ -101,20 +103,13 @@ Use the following instead of the documented text for ~/.asoundrc:
 
 -------------------------------------------------
 
-For versions prior to Version 6.7:
+Then:
 
-Use alsamixer to set adau7002 capture level to 50
-
--------------------------------------------------
-
-For Version 6.7 and later:
-
-Use alsamixer to set adau7002 capture level to 10
+Use 'alsamixer' to set adau7002 capture level to 10
 
 -------------------------------------------------
 
-
-A [User Guide](https://github.com/roscoe81/enviro-monitor/blob/master/User%20Guide/Northcliff%20Enviro%20Monitor%20User%20Guide-Gen.pdf) provides guidance on the use of the Enviro Monitor.
+The roscoe81's [User Guide](https://github.com/roscoe81/enviro-monitor/blob/master/User%20Guide/Northcliff%20Enviro%20Monitor%20User%20Guide-Gen.pdf) provides guidance on the use of the Enviro Monitor. - not update by hank-droid
 
 ## Adafruit IO Support
 Support is provided for streaming weather forecast, air quality, temperature, humidity, air pressure, PM concentration, gas concentration, light levels, noise levels and, with the optional SGP30 sensor, eCO2 and TVOC data to Adafruit IO. This can be enabled and set up as follows:
@@ -183,3 +178,4 @@ This project is licensed under the MIT License - see the LICENSE.md file for det
 ### Acknowledgements
 
 Weather Forecast based on www.worldstormcentral.co/law_of_storms/secret_law_of_storms.html by R. J. Ellis
+https://github.com/roscoe81/
